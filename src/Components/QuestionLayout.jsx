@@ -6,10 +6,10 @@ function QuestionLayout({ id, title, info, toggle, activeId }) {
   const isActive = id === activeId;
 
   return (
-    <div className="flex flex-col p-3">
+    <div className="flex flex-col p-3 max-w-md">
       <div className="bg-blue-300  ">
-        <div className="flex flex-row justify-between rounded-md p-4">
-          <h4 className="text-lg p-2">{title}</h4>
+        <div className="flex flex-row justify-between rounded-md p-3">
+          <h4 className="text-lg">{title}</h4>
           <button
             className="bg-black border-1 rounded-md w-16 text-white "
             onClick={() => toggle(id)}
@@ -17,7 +17,7 @@ function QuestionLayout({ id, title, info, toggle, activeId }) {
             {isActive ? "Hide" : "Show"}
           </button>
         </div>
-        {isActive && <p className=" px-3">{info}</p>}
+        {isActive && <p className=" p-3">{info}</p>}
       </div>
     </div>
   );
